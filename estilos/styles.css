@@ -42,6 +42,7 @@ body.claro {
   --placeholder: #6a5f55;
   --hoverbotao: #cc7f00;
   --peqdetalhes: #ff9900;
+  background: url("../recursos/imagens/M-bg-cidade-dia.jpg") center/cover no-repeat fixed;;
 }
 
 body.claro #container {
