@@ -66,6 +66,10 @@ body.claro #contanova a {
   color: #7c2d12;
 }
 
+body.claro input[type="checkbox"] {
+  accent-color: var(--destaque-glow);
+}
+
 h1, h2 {
   font-family: 'Montserrat', Helvetica, sans-serif;
 }
@@ -158,6 +162,10 @@ header > button:hover{
 
 .inputs-box input::placeholder {
   color: var(--placeholder);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--destaque-glow);
 }
 
 .inputs-box input:focus {
