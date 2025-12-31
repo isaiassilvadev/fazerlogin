@@ -105,7 +105,7 @@ header button {
 
 header > button:hover{
   color: var(--destaque-glow);
-  transform: rotate(15deg)
+  transform: scale(1.15)
 }
 
 #container {
