@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar</title>
+  <link rel="stylesheet" href="estilos/styles.css">
+  <link rel="icon" type="image/svg+xml" href="recursos/icones/account_circle.svg">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <main id="container">
+    <h1>Fazer Login</h1>
+    <form>
+      <div class="inputs-box">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="digite seu e-mail" required>
+        <i class="bi bi-envelope-fill"></i>
+      </div>
+
+      <div class="inputs-box">
+        <label for="password">Senha:</label> 
+        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        <i class="bi bi-lock-fill"></i>
+      </div>
+
+      <div id="esqueceusenha">
+        <label>
+          <input type="checkbox" name="lembrar" id="lembrar">
+          Esqueceu sua senha?
+        </label>
+      </div>
+
+      <button type="submit">Entrar</button>
+
+      <div id="contanova">
+        <p>Ainda não tem uma conta? <a href="#">Cadastre-se</a></p>
+      </div>
+
+    </form>
+
+  </main>
+
+</body>
+
+</html>
