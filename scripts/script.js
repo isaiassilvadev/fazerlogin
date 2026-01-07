@@ -1,13 +1,15 @@
-var botaoTema = document.getElementById("botaotema");
-var ico = botaoTema.querySelector("i");
+const botaoTema = document.getElementById("botaotema");
+const ico = botaoTema.querySelector("i");
 
-function alternartema() {
-  document.body.classList.toggle("claro");
+function aplicarTema(tema) {
+  document.body.classList.toggle("claro", tema === "claro");
+  ico.className = tema === "claro" ? "bi bi-moon-fill" : "bi bi-sun-fill";
+}
 
-  if (document.body.classList.contains("claro")) {
-    ico.classList.replace ("bi bi-sun-fill", "bi bi-moon-fill");
-  } else {
-    ico.classList.replace ("bi bi-moon-fill", "bi bi-sun-fill");
-  }
-} 
-botaoTema.addEventListener("click", alternartema);
+botaoTema.addEventListener("click", () => {
+  const temaAtual = document.body.classList.contains("claro") ? "escuro" : "claro";
+  localStorage.setItem("tema", temaAtual);
+  aplicarTema(temaAtual);
+});
+
+aplicarTema(localStorage.getItem("tema") || "escuro");
