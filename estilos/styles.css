@@ -114,6 +114,9 @@ header > button:hover{
   width: 90%;
   max-width: 400px;
   padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 5;
 
   background-color: transparent;
   backdrop-filter: blur(5px);
@@ -245,6 +248,7 @@ button:hover {
   #container {
     max-width: 600px;
     padding: 3em;
+    flex-direction: row;
   }
 
   #container h1 {
