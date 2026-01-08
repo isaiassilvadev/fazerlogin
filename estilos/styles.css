@@ -24,12 +24,14 @@
 
 body {
   font-family: 'Poppins', Verdana, Tahoma, sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('../recursos/imagens/Ret-bg-cidade-azul.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('../recursos/imagens/Ret-bg-cidade-azul.jpg') center/cover no-repeat scroll;
   color: var(--textoprincimpal);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  gap: 3em;
 
 }
 
@@ -82,9 +84,14 @@ header {
   height: 65px;
   display:flex;
   align-items: center;
-  padding-left: 1em;
+  padding: 0.5em 0 1em 2em;
   z-index: 10;
   background: transparent;
+}
+
+#botaotm {
+  height:100%;
+  width: 100%;
 }
 
 header button {
@@ -116,7 +123,7 @@ header > button:hover{
   padding: 2em;
   display: flex;
   flex-direction: column;
-  gap: 5;
+  gap: 1.5em;
 
   background-color: transparent;
   backdrop-filter: blur(5px);
@@ -128,15 +135,32 @@ header > button:hover{
 
 #container h1 {
   font-family: 'Montserrat', Helvetica, sans-serif;
-  font-size: 2em;
-  letter-spacing: 0.5px;
+}
+
+/* container */
+#mensagem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* título */
+.titulo {
+  font-size: 2.2rem;
+  line-height: 1.1;
   color: var(--textoprincimpal);
-  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* spans */
+.titulo span {
+  display: block;
 }
 
 .inputs-box {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: 1rem;
   position: relative; /* para posicionar os ícones */
 }
@@ -161,6 +185,7 @@ header > button:hover{
   position: relative;  /* referência para o ícone */
   display: block;
   margin-bottom: 1em;
+  padding-right: 3.2em;
 }
 
 .inputs-box input::placeholder {
@@ -180,13 +205,16 @@ input[type="checkbox"] {
   opacity: 0.8;
 }
 
-.inputs-box  i {
+.inputs-box  i#emailicone, #iconesenha {
   position: absolute;
   right: 20px;
   top: 50%;
   color: var(--destaque-glow);
-  pointer-events: none;
   font-size: 1.2em;
+}
+
+.inputs-box  i#emailicone {
+  pointer-events: none;
 }
 
 #esqueceusenha {
@@ -220,7 +248,7 @@ button {
   margin-top: 0.5em;
 }
 
-button:hover {
+button:hover, button:active {
   background: var(--hoverbotao);
   box-shadow: 0 0 10px var(--destaque-glow);
 }
@@ -236,8 +264,38 @@ button:hover {
   text-decoration: none;
 }
 
-#contanova a:hover {
+#contanova a:hover, a:active {
   text-decoration: underline;
+}
+
+#iconesenha {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  border: none;
+  background: transparent;
+  padding: 0.25em;
+  border-radius: 6px;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+#iconesenha:hover, #iconesenha:active {
+  opacity: 1;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
+   backdrop-filter: blur(4px);
+  box-shadow: 0 0 8px var(--destaque-glow);
+}
+
+#iconesenha:focus-visible {
+  outline: 2px solid var(--destaque-glow);
+  outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
@@ -246,18 +304,45 @@ button:hover {
   }
 
   #container {
-    max-width: 600px;
+    min-width: 750px;
+    min-width: 800px;
     padding: 3em;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
   }
 
-  #container h1 {
-    font-size: 2.5em;
+  #mensagem {
+    flex: 1;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .titulo {
+    font-size: 3rem;
+    text-align: left;
+    line-height: 1;
+    max-width: 360px;
+  }
+
+  .linha-1 {
+    margin-left: 0;
+  }
+
+  .linha-2 {
+    margin-left: 28px;
   }
 
   button {
     font-size: 1.1em;
     padding: 1em;
+  }
+  
+  form {
+    flex: 1;
   }
 
   #contanova {
@@ -271,12 +356,7 @@ button:hover {
   }
 
   #container {
-    max-width: 700px;
+    max-width: 850px;
     padding: 4em;
-  }
-
-  #container h1 {
-    font-size: 3em;
-    padding: 1em 1.5em;
   }
 }

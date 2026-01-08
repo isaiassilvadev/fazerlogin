@@ -12,14 +12,19 @@
 
 <body>
   <header>
-    <button id="botaotema" aria-label="Alternar tema claro/escuro">
-      <i class="bi bi-sun-fill"></i> <!--Tema claro ou escuro class="bi bi moon-fill"-->
-    </button>
+    <section id="botaotm">
+       <button id="botaotema" aria-label="Alternar tema claro/escuro">
+           <i class="bi bi-sun-fill"></i> <!--Tema claro ou escuro class="bi bi moon-fill"-->
+       </button>
+    </section>
   </header>
 
   <main id="container">
     <section id="mensagem">
-      <h1>Seja Bem-Vindo!</h1>
+       <h1 class="titulo">
+         <span class="linha-1">Seja</span>
+         <span class="linha-2">Bem-vindo</span>
+      </h1>
       <p>Coloque seus dados para continuar.</p>
     </section>
     
@@ -29,13 +34,13 @@
       <div class="inputs-box">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="digite seu e-mail" autocomplete="email" required>
-        <i class="bi bi-envelope-fill"></i>
+        <i id="emailicone" class="bi bi-envelope-fill"></i>
       </div>
 
       <div class="inputs-box">
         <label for="password">Senha:</label> 
         <input type="password" id="password" name="password" placeholder="Digite sua senha" autocomplete="current-password" required>
-        <i class="bi bi-lock-fill"></i>
+        <button type="button" id="iconesenha" aria-label="Mostrar senha"><i class="bi bi-lock-fill"></i></button>
       </div>
 
       <div id="esqueceusenha">
